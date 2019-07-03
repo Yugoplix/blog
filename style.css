@@ -1,0 +1,243 @@
+h1, h2, h3, h4, h5, h6, p, a, a:hover {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+.title{
+    text-align: center;
+    margin-top: 65px;
+    color: #ff4451;
+    font-size: 110px;
+}
+
+nav{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #ff6b75;
+}
+.nav-link{
+    padding: .8rem 1rem;
+}
+.profilePicture{
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+.dropdown-item:hover{
+    background-color: #ff6b75;
+}
+.dropdown-item.active{
+    background-color: #ff4451;
+}
+
+/* Style de la première page */
+
+header{
+    background-color: #ff4451;
+    padding: 2%;
+}
+
+/* ######################### */
+
+/* Style de la page de connexion */
+
+.login-box{
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.login-box h1{
+    float: left;
+    font-size: 40px;
+    color: #ff4451;
+    border-bottom: 6px solid #ff4451;
+    margin-bottom: 50px;
+}
+.textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 2px solid #ff6b75;
+}
+.textbox input{
+    border: 0;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+}
+.textbox i{
+    width: 26px;
+    float: left;
+    text-align: center;
+    line-height: 1.5;
+}
+.button{
+    width: 100%;
+    background-color: #ff4451;
+    border: 2px solid #ff4451;
+    color: white;
+    padding: 5px;
+    margin-top: 25px;
+}
+/* ############################# */
+
+/* Style pour le profil */
+
+.profil-box{
+    width: 550px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.subtitle{
+    font-size: 46px;
+    color: #ff4451;
+    margin-bottom: 18px;
+}
+#changePicture{
+    display: none;
+}
+#nickname{
+    color: #16181B;
+    margin-top: 34px;
+    margin-left: 50px;
+    font-size: 50px;
+}
+#changeNickname{
+    color: #16181B;
+}
+.form-group i{
+    margin-top: 55px;
+    margin-left: 10px;
+    width: 30px;
+    float: right;
+    text-align: center;
+    line-height: 1.5;
+}
+#firstFloor{
+    margin-left: 4px;
+}
+#nicknameChanger{
+    margin-top: 26px;
+    margin-left: 50px;
+    width: 50%;
+    height: 50%;
+    border: 0;
+    border-bottom: 2px solid #ff4451;
+    outline: none;
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+}
+.column input{
+    display: block;
+    width: 100%;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    border: 0;
+    border-bottom: 2px solid #ff6b75;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    color: #16181B;
+    outline: none;
+}
+#modifyProfil{
+    width: 100%;
+    background-color: #ff4451;
+    border: 2px solid #ff4451;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    padding-top: 8px;
+    padding-bottom: 14px;
+}
+
+/* #################### */
+
+/* Style pour la page admin */
+
+#pictureProfile{
+    width: 3%;
+    height: 3%;
+    margin-left: 15px;
+    margin-right: 10px;
+    border-radius: 100px;
+}
+#hello{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 40px;
+    color: #16181B;
+}
+.flex-column .nav-link{
+    color: #16181B;
+    border: 2px solid #16181B;
+    width: 10%;
+}
+.flex-column{
+    margin-top: 30px;
+    margin-left: 20%;
+}
+#adminTitle{
+    color: white;
+    text-align: center;
+}
+/* ######################## */
+
+/* Pour les fonctions Javascript */
+
+.fromLeft {
+    opacity:0;
+    transform: translate(-100px, 0);
+    transition: transform 650ms ease-out, opacity 650ms ease-out;
+}
+.fromLeft.visible {
+    opacity:1;
+    transform: translate(0, 0);
+}
+.fromRight {
+    opacity:0;
+    transform: translate(100px, 0);
+    transition: transform 650ms ease-out, opacity 650ms ease-out;
+}
+.fromRight.visible {
+    opacity:1;
+    transform: translate(0, 0);
+}
+.fromTop {
+    opacity:0;
+    transform: translate(0, 150px);
+    transition: transform 1050ms ease-out, opacity 1050ms ease-out;
+}
+.fromTop.visible {
+    opacity:1;
+    transform: translate(0, 0);
+}
+.fromBottom {
+    opacity:0;
+    transform: translate(0, -150px);
+    transition: transform 1050ms ease-out, opacity 1050ms ease-out;
+}
+.fromBottom.visible {
+    opacity:1;
+    transform: translate(0, 0);
+}
+.apparaitre{
+    opacity: 0;
+    transition: opacity 3000ms ease-out;;
+}
+.apparaitre.visible{
+    opacity: 1;
+}
+
+/* ############################# */
