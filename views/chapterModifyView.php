@@ -1,7 +1,8 @@
+<meta charset="UTF-8">
 <div class="markdownPost">
     <form method="post" action="" id="markdownForm">
         <input type="text" name="title" placeholder="Titre" value="<?=$row['titre']?>">
-        <textarea name="markdown" placeholder="Ecrivez votre chapitre en markdown"><?=utf8_encode($row['markdown'])?></textarea>
+        <textarea name="markdown" placeholder="Ecrivez votre chapitre en markdown"><?=stripslashes($row['markdown'])?></textarea>
         <button type="submit" name="previsualiser" id="previsualizer">Prévisualiser</button>
         <button type="submit" name="modifier" id="modifier">Modifier</button>
     </form>

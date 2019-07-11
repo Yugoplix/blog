@@ -5,4 +5,4 @@
     updateProfile();
 
     $nbPage = 5;
-    require_once 'profilView.php';
+    require_once 'views/profilView.php';

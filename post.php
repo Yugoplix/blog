@@ -25,7 +25,7 @@
         if (isset($_POST['modifier']) && !empty($_POST['title']) && !empty($_POST['markdown'])){
             $send = $dbh->prepare("UPDATE chapitres SET titre = :titre, markdown = :markdown, content = :content WHERE id = :id");
             $send->bindValue("titre", $_POST['title']);
-            $send->bindValue("markdown", $_POST['markdown']);
+            $send->bindValue("markdown",addslashes($_POST['markdown']));
             $htmlChapter = $parsedown->text($_POST['markdown']);
             $send->bindValue("content", $htmlChapter);
             $send->bindValue("id",$row['id']);
