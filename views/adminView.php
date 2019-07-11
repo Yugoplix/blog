@@ -19,7 +19,7 @@
     <?php
         switch ($_GET['page']){
             case 1:
-                echo "Modification de post";
+                require_once 'post.php';
                 break;
             case 2:
                 echo "Description association";

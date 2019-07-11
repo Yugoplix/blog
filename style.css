@@ -194,6 +194,90 @@ header{
 }
 /* ######################## */
 
+/* Pour l'admin de post  */
+
+.adminPost h1{
+    font-size: 90px;
+    color: #ff4451;
+    text-align: center;
+}
+.adminPost p, .adminPost a{
+    font-size: 36px;
+    color: #16181B;
+    text-align: center;
+}
+
+/* ######################### */
+
+/* Pour la modification de post */
+
+.markdownPost{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    float: left;
+    height: auto;
+    width: 50%;
+    /*background-color: red;*/
+}
+.htmlPost{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    height: auto;
+    width: 50%;
+    /*background-color: aqua;*/
+}
+.htmlPost h1, .htmlPost p{
+    color: #16181B;
+    display: block;
+}
+.emplacementHTML{
+    display: flex;
+    flex-direction: column;
+}
+.emplacementHTML h1{
+    color: #ff4451;
+}
+.emplacementHTML p{
+    text-align: justify;
+    font-size: 21px;
+    margin-right: 10%;
+}
+#markdownForm input, #markdownForm textarea{
+    display: flex;
+    width: 47em;
+    margin: 0 13%;
+    border: none;
+    border-bottom: 1px solid #16181B;
+    margin-bottom: 25px;
+    padding: 5px;
+    background-color: rgba(0,0,0,0);
+}
+#markdownForm textarea{
+    height: 500%;
+}
+#markdownForm input:focus, #markdownForm textarea:focus{
+    outline: none;
+}
+#previsualizer{
+    margin-left: 13%;
+    background-color: #ff4451;
+    color: white;
+    border-radius: 5px;
+    border: 3px solid #ff4451;
+}
+#modifier{
+    margin: 0 1%;
+    background-color: #ff4451;
+    color: white;
+    border-radius: 5px;
+    border: 3px solid #ff4451;
+}
+
+/* ############################ */
+
 /* Pour les fonctions Javascript */
 
 .fromLeft {

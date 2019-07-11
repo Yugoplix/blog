@@ -20,4 +20,4 @@
         }
     }
 
-    require_once 'connexionView.php';
+    require_once 'views/connexionView.php';

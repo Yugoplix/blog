@@ -5,7 +5,7 @@
 
     $nbPage = 1;
 
-    require 'indexView.php';
+    require 'views/indexView.php';
 
 ?>
 

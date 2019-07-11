@@ -5,5 +5,5 @@
         header("Location: index.php");
     }
 
-    require 'menuView.php';
+    require 'views/menuView.php';
 ?>

@@ -10,13 +10,13 @@
     <h3 id="hello">Bonjour,<img src="<?=$_SESSION['picture']?>" id="pictureProfile"><?=$_SESSION['username']?></h3>
 </div>
 <nav class="nav nav-pills nav-fill">
-    <a class="nav-item nav-link <?= $nbPage==1?"active":""?>" href="?page=1">Post</a>
-    <a class="nav-item nav-link <?= $nbPage==2?"active":""?>" href="?page=2">L'association</a>
+    <a class="nav-item nav-link <?= $_GET['page']==1?"active":""?>" href="?page=1">Post</a>
+    <a class="nav-item nav-link <?= $_GET['page']==2?"active":""?>" href="?page=2">L'association</a>
     <?php
         if (!empty($_SESSION['role']) && $_SESSION['role'] > 2):
     ?>
-        <a class="nav-item nav-link <?= $nbPage==3?"active":""?>" href="?page=3">Journal d'évenement</a>
-        <a class="nav-item nav-link <?= $nbPage==4?"active":""?>" href="?page=4">IP Log</a>
+        <a class="nav-item nav-link <?= $_GET['page']==3?"active":""?>" href="?page=3">Journal d'évenement</a>
+        <a class="nav-item nav-link <?= $_GET['page']==4?"active":""?>" href="?page=4">IP Log</a>
     <?php
         endif;
     ?>

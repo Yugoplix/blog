@@ -3,4 +3,4 @@
     loadSession();
     $nbPage = 2;
 
-    require_once 'associationView.php';
+    require_once 'views/associationView.php';

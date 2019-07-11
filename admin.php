@@ -6,5 +6,8 @@
     if ($_SESSION['isLog'] == False || $_SESSION['role'] < 2){
         header("Location: connexion.php");
     }
+    if (empty($_GET['page'])){
+        header("Location: ?page=1");
+    }
 
-    require_once 'adminView.php';
+    require_once 'views/adminView.php';

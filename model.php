@@ -45,6 +45,7 @@ function loadSession(){
 
     if (empty($_SESSION['isLog'])) {
         $_SESSION['isLog'] = False;
+
     }
 
     if ($_SESSION['isLog'] == True){
