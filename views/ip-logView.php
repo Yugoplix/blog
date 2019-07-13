@@ -11,28 +11,30 @@
     <title>Admin panel</title>
 </head>
 <body onload="javascript:slideAll();">
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th scope="col">Date/Heure</th>
-        <th scope="col">Utilisateur</th>
-        <th scope="col">IP</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    while ($row = $allConnection->fetch(PDO::FETCH_ASSOC)):
-        ?>
+<div class="ipList">
+    <table class="table table-striped">
+        <thead>
         <tr>
-            <td><?=$row['datetime']?></td>
-            <td><?=$row['username']?></td>
-            <td><?=$row['ip']?></td>
+            <th scope="col">Date/Heure</th>
+            <th scope="col">Utilisateur</th>
+            <th scope="col">IP</th>
         </tr>
-    <?php
-    endwhile;
-    ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <?php
+            while ($row = $allConnection->fetch(PDO::FETCH_ASSOC)):
+        ?>
+            <tr>
+                <td><?=$row['datetime']?></td>
+                <td><?=$row['username']?></td>
+                <td><?=$row['ip']?></td>
+            </tr>
+        <?php
+            endwhile;
+        ?>
+        </tbody>
+    </table>
+</div>
 <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,10 +1,3 @@
-<?php
-
-    if (intval($_SESSION['role']) < 2){
-        header("Location: connexion.php");
-    }
-
-?>
 <h1 class="fromBottom" id="adminTitle">ADMIN PANEL</h1>
 <div class="apparaitre">
     <h3 id="hello">Bonjour,<img src="<?=$_SESSION['picture']?>" id="pictureProfile"><?=$_SESSION['username']?></h3>

@@ -1,5 +1,5 @@
 <nav class="nav nav-pills nav-fill">
-    <a class="nav-item nav-link <?= $nbPage==1?"active":""?>" href="index.php">Missions</a>
+    <a class="nav-item nav-link <?= $nbPage==1?"active":""?>" href="index.php">Chapitres</a>
     <a class="nav-item nav-link <?= $nbPage==2?"active":""?>" href="association.php">L'association</a>
     <?php
     if ($_SESSION['isLog'] == False):

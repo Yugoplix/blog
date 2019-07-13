@@ -32,14 +32,55 @@ nav{
     background-color: #ff4451;
 }
 
-/* Style de la première page */
+/* Style de la première page (chapitres) */
 
 header{
     background-color: #ff4451;
     padding: 2%;
 }
+.chapterContainer{
+    margin-top: 20px;
+    border: 1px solid black;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+.chapterContainer:last-child{
+    margin-bottom: 100px;
+}
+.chapterContainer a{
+    display: block;
+    color: #ffffff;
+    margin: 0;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    padding-top: 90px;
+}
 
 /* ######################### */
+
+/* Style de l'affichage du chapitre */
+
+.postView{
+    color: #16181B;
+    margin: 50px 20%;
+}
+.postView h1{
+    color: #ff4451;
+    margin-bottom: 24px;
+    font-size: 52px;
+}
+.postView p{
+    color: #16181B;
+    font-size: 22px;
+}
+
+/* ################################ */
 
 /* Style de la page de connexion */
 
@@ -206,8 +247,46 @@ header{
     color: #16181B;
     text-align: center;
 }
+#newChapter{
+    background-color: #ff4451;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 7px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+}
 
 /* ######################### */
+
+/* Pour la création de post */
+
+.createPost input{
+    margin: 25px 35%;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #16181B;
+}
+.createPost textarea{
+    margin: 0px 35%;
+    height: 500px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #16181B;
+}
+.createPost button{
+    margin: 20px 42%;
+    color: #ffffff;
+    background-color: #ff4451;
+    border-radius: 7px;
+    border: 2px solid #ff4451;
+}
+#createForm{
+    display: flex;
+    flex-direction: column;
+}
+
+/* ######################## */
 
 /* Pour la modification de post */
 
@@ -218,7 +297,6 @@ header{
     float: left;
     height: auto;
     width: 50%;
-    /*background-color: red;*/
 }
 .htmlPost{
     padding-top: 50px;
@@ -227,11 +305,17 @@ header{
     float: right;
     height: auto;
     width: 50%;
-    /*background-color: aqua;*/
 }
-.htmlPost h1, .htmlPost p{
+.htmlPost h1, .htmlPost h2, .htmlPost h3, .htmlPost h4, .htmlPost h5, .htmlPost h6, .htmlPost a, .htmlPost p{
     color: #16181B;
     display: block;
+}
+.htmlPost img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 350px;
+    max-width: 1200px;
 }
 .emplacementHTML{
     display: flex;
@@ -267,6 +351,7 @@ header{
     color: white;
     border-radius: 5px;
     border: 3px solid #ff4451;
+    margin-bottom: 20px;
 }
 #modifier{
     margin: 0 1%;
@@ -274,9 +359,43 @@ header{
     color: white;
     border-radius: 5px;
     border: 3px solid #ff4451;
+    margin-bottom: 20px;
 }
 
 /* ############################ */
+
+/* Style du journal d'évenement */
+
+.eventList{
+    margin: 25px;
+    border: 1px solid #16181B;
+}
+.eventList .table{
+    margin-bottom: 0;
+}
+.eventList img{
+    height: 60px;
+    width: 60px;
+    border-radius: 150px;
+    margin-right: 20px;
+}
+.eventList td:first-child, .eventList th:first-child{
+    width: 200px;
+}
+
+/* ############################ */
+
+/* Style de l'ip-log */
+
+.ipList{
+    margin: 25px;
+    border: 1px solid #16181B;
+}
+.ipList .table{
+    margin-bottom: 0;
+}
+
+/* ################# */
 
 /* Pour les fonctions Javascript */
 

@@ -11,27 +11,28 @@
     <title>Admin panel</title>
 </head>
 <body onload="javascript:slideAll();">
-<header>
-    <?php
-        require_once "adminMenuView.php";
-    ?>
-</header>
-    <?php
-        switch ($_GET['page']){
-            case 1:
-                require_once 'adminPost.php';
-                break;
-            case 2:
-                echo "Description association";
-                break;
-            case 3:
-                require_once 'event.php';
-                break;
-            case 4:
-                require_once 'ip-log.php';
-                break;
-        }
-    ?>
+<div class="eventList">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Date/Heure</th>
+            <th scope="col">Evenements</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        while ($row = $allEvents->fetch(PDO::FETCH_ASSOC)):
+            ?>
+            <tr>
+                <td><?=$row['datetime']?></td>
+                <td><img src="<?="../assets/profile/".$row['user_id']."/".$row['image']?>" class="profilIMG"><strong><?=$row['username']?></strong><?=' à '.$row['event']?></td>
+            </tr>
+        <?php
+        endwhile;
+        ?>
+        </tbody>
+    </table>
+</div>
 <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

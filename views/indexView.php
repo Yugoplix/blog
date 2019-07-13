@@ -16,7 +16,18 @@
         require_once "menu.php";
     ?>
 </header>
-<h1 class="title fromBottom">MISSIONS</h1>
+<h1 class="title fromBottom">CHAPITRES</h1>
+<div class="listChapter">
+    <?php
+        while ($row = $listChapters->fetch(PDO::FETCH_ASSOC)):
+    ?>
+        <div class="chapterContainer" style="background-image: url('../assets/chapters/hover.png'), url('../assets/chapters/<?=$row['image']?>');">
+            <a href="/post.php?chapter=<?=$row['id']?>"><?=substr($row['titre'],0,10)?><br><?=substr($row['titre'],13,50)?></a>
+        </div>
+    <?php
+        endwhile;
+    ?>
+</div>
 <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

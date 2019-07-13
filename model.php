@@ -17,25 +17,6 @@ function dbConnect(){
     return $dbh;
 }
 
-function get_ip()
-{
-    if ( isset ( $_SERVER['HTTP_X_FORWARDED_FOR'] ) )
-    {
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }
-    elseif ( isset ( $_SERVER['HTTP_CLIENT_IP'] ) )
-    {
-        $ip  = $_SERVER['HTTP_CLIENT_IP'];
-    }
-    elseif ($_SERVER['REMOTE_ADDR'] == "::1")
-    {
-        $ip = "localhost";
-    } else {
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
-}
-
 function isLog(){
     if ($_SESSION['isLog'] == False){
         header("Location: connexion.php");
@@ -50,6 +31,8 @@ function loadSession(){
         $_SESSION['isLog'] = False;
 
     }
+
+    checkIP();
 
     if ($_SESSION['isLog'] == True){
 
@@ -78,6 +61,7 @@ function loadSession(){
             }
 
         }
+        updateConnexion();
 
 
     }
@@ -138,10 +122,59 @@ function checkIP(){
     }
 
     if ($_SESSION['isChecked'] == False){
-        $checkConnect = $dbh->prepare('INSERT INTO ip_log (user_id, ip) VALUES (:id, :ip)');
-        $checkConnect->bindValue('id', $_SESSION['id']);
-        $checkConnect->bindValue('ip', get_ip());
-        $checkConnect->execute();
+        if ($_SESSION['isLog'] == True){
+            $dbhIP = dbConnect();
+            $checkConnect = $dbhIP->prepare('INSERT INTO ip_log (user_id, ip) VALUES (:id, :ip)');
+            $checkConnect->bindValue('id', $_SESSION['id']);
+            $checkConnect->bindValue('ip', get_ip());
+            $checkConnect->execute();
+        } else {
+            $dbhIP = dbConnect();
+            $checkConnect = $dbhIP->prepare('INSERT INTO ip_log (ip) VALUES (:ip)');
+            $checkConnect->bindValue('ip', get_ip());
+            $checkConnect->execute();
+        }
         $_SESSION['isChecked'] = True;
+        $requete = $dbhIP->query("SELECT COUNT(*) AS COUNT FROM ip_log");
+        $count = $requete->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['connexionNb'] = $count['COUNT'];
     }
+}
+
+function updateConnexion(){
+    if (!empty($_SESSION['connexionNb'])){
+        $dbhUpdate = dbConnect();
+        $update = $dbhUpdate->prepare("UPDATE ip_log SET user_id = :user_id WHERE id = :id");
+        $update->bindValue("user_id",$_SESSION['id']);
+        $update->bindValue("id", $_SESSION['connexionNb']);
+        $update->execute();
+    }
+}
+
+function get_ip()
+{
+    if ( isset ( $_SERVER['HTTP_X_FORWARDED_FOR'] ) )
+    {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    elseif ( isset ( $_SERVER['HTTP_CLIENT_IP'] ) )
+    {
+        $ip  = $_SERVER['HTTP_CLIENT_IP'];
+    }
+    elseif ($_SERVER['REMOTE_ADDR'] == "::1")
+    {
+        $ip = "localhost";
+    } else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
+
+function addEvent($name, $user){
+    $dbh = dbConnect();
+    $addEvent = $dbh->prepare("INSERT INTO event (user_id, event)  VALUES (:user_id, :event)");
+    $addEvent->bindValue("user_id", $user);
+    $addEvent->bindValue("event", $name);
+    $addEvent->execute();
 }
